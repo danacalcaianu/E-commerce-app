@@ -9,7 +9,13 @@ export class MenuBarComponent implements OnInit {
 
   constructor() { }
 
+  visible= false;
   ngOnInit() {
+  }
+
+  toggleMiniCart(){
+    console.log("here")
+    this.visible= !this.visible;
   }
 
 }

@@ -8,6 +8,7 @@ import { MenuBarComponent } from './menu-bar/menu-bar.component';
 import { SliderComponent } from './slider/slider.component';
 import { FooterComponent } from './footer/footer.component';
 import { SearchBarComponent } from './search-bar/search-bar.component';
+import { MinicartComponent } from './minicart/minicart.component';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { SearchBarComponent } from './search-bar/search-bar.component';
     MenuBarComponent,
     SliderComponent,
     FooterComponent,
-    SearchBarComponent
+    SearchBarComponent,
+    MinicartComponent
   ],
   imports: [
     BrowserModule

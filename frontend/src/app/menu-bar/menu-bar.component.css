@@ -46,3 +46,13 @@ li img{
     width: 30px;
     height: 30px;
 }
+
+.modal{
+    position: absolute;
+    top:100%;
+    right:0;
+}
+
+.menu{
+    position: relative;
+}

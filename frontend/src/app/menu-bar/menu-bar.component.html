@@ -6,7 +6,12 @@
   </ul>
   <app-search-bar></app-search-bar>
   <ul>
-    <li><img src="../../../assets/cart.png"></li>
+    <li (mouseenter)="toggleMiniCart()" (mouseleave)="toggleMiniCart()">
+      <img src="../../../assets/cart.png">
+      <div *ngIf="visible">
+          <app-minicart class="modal"></app-minicart>
+        </div>
+    </li>
     <li>Login</li>
   </ul>
 </div>
