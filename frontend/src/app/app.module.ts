@@ -12,10 +12,12 @@ import { MinicartComponent } from './minicart/minicart.component';
 import { ProductsList } from './products-list/products-list.component';
 import { RouterModule, Routes } from '@angular/router';
 import {Header } from './header/header.component';
+import { ContactPageComponent } from './contact-page/contact-page.component';
 
 const appRoutes: Routes = [
   { path: '', component: HomepageComponent },
   { path:'products', component:ProductsList },
+  { path:'contact', component:ContactPageComponent },
 
 ];
 
@@ -29,7 +31,8 @@ const appRoutes: Routes = [
     SearchBarComponent,
     MinicartComponent,
     ProductsList,
-    Header
+    Header,
+    ContactPageComponent
   ],
   imports: [
     BrowserModule,
