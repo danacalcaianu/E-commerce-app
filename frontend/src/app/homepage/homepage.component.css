@@ -1,63 +1,19 @@
-html{
-    height: 100%;
-    width: 100%;
-}
-
-body{
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    width: 100%;
-}
-*{
-    margin:0;
-}
-
-.header{
-    background: url("../../assets/cover5.jpg") no-repeat top center fixed;
-    background-size: cover;
-    height: 400px;
-    margin: 0;
-    padding: 0;
-    position: relative;
-    /* color: white;
-    text-align: center;
-    font-size: 50px; */
-}
-.header p{
-    color: white;
-    text-align: center;
-    font-size: 50px;
-}
-
-.bottom{
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-}
 .wrapper{
-    width:80%;
-    margin: 0 auto;
-}
-
-.body{
     background-color: #f4f4f4;
-    height: 1000px;
     width:100%;
-    padding-top: 50px;
+    padding: 50px 0;
     display: flex;
 }
 
-.body p{
+.wrapper p{
     text-align: center;
     margin: 20px 0;
-    /* font-size: 1.2em; */
     color:rgb(100, 100, 100);
     font-family: 'Raleway';
     font-weight: 100;
 }
 
-.body p:first-of-type {
+.wrapper p:first-of-type {
     font-weight: bold;
     font-size: 1.2em;
 }

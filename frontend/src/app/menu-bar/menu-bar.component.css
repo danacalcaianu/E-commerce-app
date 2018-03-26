@@ -17,16 +17,13 @@
 }
 
 .menu li {
-    /* margin: 20px; */
     list-style-type: none;
-    line-height: 50px;
-    /* margin:15px; */
     font-size: 1.2em;
-    padding: 0 30px;
+    padding: 14px 30px;
     color:rgba(0, 0, 0, 0.696);
-    /* border-right: 1px solid rgba(255, 255, 255, 0.442); */
-    height: 100%;
+    display: flex;
 }
+
 
 .menu li:hover{
     background-color: rgba(255, 255, 255, 0.798);
@@ -42,7 +39,7 @@ ul:first-of-type li{
 }
 
 li img{
-    margin: 10px;
+    /* margin: 10px; */
     width: 30px;
     height: 30px;
 }
@@ -55,4 +52,27 @@ li img{
 
 .menu{
     position: relative;
+}
+
+.tooltip-triangle{
+    width: 1px;
+    height: 1px;
+    border:6px solid transparent;
+    border-right-color: #ac0b0b;
+    display: flex;
+    align-self: center;
+}
+
+
+.tooltip-box{
+    background: linear-gradient(#8a0808,#990808, #ac0b0b, #990808,#8a0808);
+    padding:0 5px;
+    border-radius: 5px;
+}
+
+.tooltip-box span{
+    font-size: 0.65em;
+    color:white;
+    display: block;
+    margin-top:4px;
 }
