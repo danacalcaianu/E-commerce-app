@@ -1,0 +1,42 @@
+<div class="container" *ngIf="!registerVisibility">
+    <span class="title">Login Form</span>
+    <form [formGroup]="loginForm"  (ngSubmit)="loginUser()">
+        <div class="form-group">
+            <label for="username">Username</label>
+            <input type="text" class="form-control" formControlName="username" required>
+        </div>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" class="form-control" formControlName="password" required>
+        </div>
+        <button type="submit" class="button" [disabled]="loginForm.status == 'INVALID'">Submit</button>
+    </form>
+    <p (click)="toggleRegister()" class="link">Don't have an account? Register!</p>
+</div>
+
+<div class="container" *ngIf="registerVisibility">
+    <span class="title">Register Form</span>
+    <form [formGroup]="registerForm"  (ngSubmit)="registerUser()">
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" class="form-control" formControlName="name" required>
+        </div>
+
+        <div class="form-group">
+            <label for="username">username</label>
+            <input type="text" class="form-control" formControlName="username" required>
+        </div>
+
+        <div class="form-group">
+            <label for="password">password</label>
+            <input type="password" class="form-control" formControlName="password" required>
+        </div>
+
+        <button type="submit" class="button" [disabled]="registerForm.status == 'INVALID'">Submit</button>
+    </form>
+    <p (click)="toggleRegister()" class="link">Back to login!</p>
+</div>
+<p>Register Form value: {{ registerForm.value | json }}</p>
+<p>Form : {{ registerForm.status | json }}</p>
+<p>Login Form value: {{ loginForm.value | json }}</p>
+<p>Form : {{ loginForm.status | json }}</p>

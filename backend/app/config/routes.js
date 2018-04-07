@@ -3,6 +3,11 @@ const usersController = require( "../controllers/usersController" );
 
 const validateToken = require( "../middlewares/validateToken" );
 const authorize = require( "../middlewares/authorize" );
+const checkExistingModel = require( "../middlewares/checkExistingModel" );
+const assignToken = require("../middlewares/assignToken")
+const checkLoginPassword = require("../middlewares/checkLoginPassword")
+const hashPassword = require("../middlewares/hashPassword")
+
 // add other middlewares that are used
 
 const express = require( "express" );
@@ -34,7 +39,7 @@ const router = express.Router( );
 *           }
 *      }
 */
-router.post( "/users/registration", authorize, usersController.register );
+router.post( "/users/registration",checkExistingModel( "username", "User", "user" ), hashPassword, usersController.register );
 
 /**
 *    @apiGroup User
@@ -49,7 +54,8 @@ router.post( "/users/registration", authorize, usersController.register );
 *           }
 *      }
 */
-router.post( "/users/login", authorize, usersController.login );
+
+router.post( "/users/login", checkExistingModel( "username", "User", "user" ),checkLoginPassword,assignToken, usersController.login );
 
 /**
 *    @apiGroup User
@@ -74,7 +80,7 @@ router.put( "/users/edit", authorize, validateToken, usersController.edit );
 router.delete( "/users/delete", authorize, validateToken, usersController.delete );
 
 router.get( "/test", ( req, res ) => {
-    res.json( { success: true } );
+    res.json( { success: "THIS IS JUST A TEST" } );
 } );
 
 module.exports = ( app ) => {

@@ -2,6 +2,7 @@ const mongoose = require( "mongoose" );
 const { extractObject } = require( "../utilities" );
 const jwt = require( "jsonwebtoken" );
 const bcrypt = require( "bcrypt" );
+const { saveChangesToModel } = require( "../utilities/index" );
 
 const User = mongoose.model( "User" );
 const SECRET = "superSuperSecret";
@@ -9,46 +10,21 @@ const SECRET = "superSuperSecret";
 exports.register = ( req, res ) => {
     let { user } = req;
     if ( user ) {
-        res.preconditionFailed( "existing_user" );
-        return;
+        return res.preconditionFailed( "existing_user" );
     }
     user = new User( req.body );
-    user.setPass( req.body.password );
-    user.save( ( err, savedUser ) => {
-        if ( err ) {
-            return res.validationError( err );
-        }
-        return res.success( extractObject(
-            savedUser,
-            [ "id", "username" ],
-        ) );
-    } );
+    user.setId();
+    user.password = req.hash;
+    saveChangesToModel( res, user );
 };
 
 exports.login = ( req, res ) => {
-    const { user } = req;
-    if ( !req.body.password ) {
-        return res.status( 400 ).send( "password required" );
-    }
-
-    const password = bcrypt.compareSync( req.body.password, user.password );
-    if ( user ) {
-        if ( user.password !== password ) {
-            return res.json( {
-                success: false,
-                message: "Authentication failed. Wrong password.",
-            } );
-        }
-
-        const token = jwt.sign( user.toObject(), SECRET, { expiresIn: 1440 } );
-        return res.json( {
-            success: true,
-            token,
-        } );
-    }
+    const { token } = req;
+    const { user }= req;
     return res.json( {
-        success: false,
-        message: "Authentication failed. User not found.",
+        success: true,
+        token,
+        user,
     } );
 };
 
