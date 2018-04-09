@@ -34,6 +34,7 @@ export class MenuBarComponent implements OnInit {
   {
     this.userService.logout();
     this.user = undefined;
+    this.logoutDiv= false;
   }
 
   toggleLogout(){

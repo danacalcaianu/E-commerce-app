@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../services/user.service'
 import { FormGroup, FormControl } from '@angular/forms';
-import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 
 @Component({
     selector: 'app-users',
@@ -23,21 +22,18 @@ export class UsersComponent implements OnInit {
 
     })
 
-    constructor(private userService: UserService,
-        private route: ActivatedRoute,
-        private router: Router) { }
-    ngOnInit() {
-    }
+    constructor(private userService: UserService) { }
+
+    ngOnInit() {}
     
     registerUser() {
-        this.userService.register(this.registerForm.value).subscribe(res=>console.log(res))
+        this.userService.register(this.registerForm.value)
         this.registerForm.reset()
         this.toggleRegister();
     }
 
     loginUser() { 
         this.userService.login(this.loginForm.value)
-        this.router.navigate(['/products']);
     }
 
     toggleRegister(){
