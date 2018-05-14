@@ -1,12 +1,12 @@
-const co = require( "co" );
+const co = require('co');
 
-exports.saveChangesToModel = ( res, model ) => {
-    model.save( ( err, updatedModel ) => {
-        if ( err ) {
-            return res.validationError( err );
-        }
-        return res.success( updatedModel );
-    } );
+exports.saveChangesToModel = (res, model) => {
+  model.save((err, updatedModel) => {
+    if (err) {
+      return res.validationError(err);
+    }
+    return res.success(updatedModel);
+  });
 };
 
 // exports.queryModel = ( res, model, query ) => model.find(
@@ -24,7 +24,7 @@ exports.saveChangesToModel = ( res, model ) => {
 //     return res.success( results );
 // } );
 
-exports.queryModel = co.wrap( function* ( model, query ) {
-    const result = yield model.find( query );
-    return result;
-} );
+exports.queryModel = co.wrap(function* (model, query) {
+  const result = yield model.find(query);
+  return result;
+});

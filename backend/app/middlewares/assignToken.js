@@ -1,13 +1,13 @@
-const jwt = require( "jsonwebtoken" );
+const jwt = require('jsonwebtoken');
 
-const SECRET = "superSuperSecret";
+const SECRET = 'superSuperSecret';
 
-module.exports = ( req, res, next ) => {
-    const person = req.user;
+module.exports = (req, res, next) => {
+  const person = req.user;
 
-    if ( !person ) {
-        return res.unauthorized();
-    }
-    req.token = jwt.sign( person.toObject(), SECRET, { expiresIn: 1440 } );
-    return next();
+  if (!person) {
+    return res.unauthorized();
+  }
+  req.token = jwt.sign(person.toObject(), SECRET, { expiresIn: 1440 });
+  return next();
 };

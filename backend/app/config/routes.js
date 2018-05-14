@@ -1,18 +1,18 @@
-const usersController = require( "../controllers/usersController" );
+const usersController = require('../controllers/usersController');
 // add other controllers that are used
 
-const validateToken = require( "../middlewares/validateToken" );
-const authorize = require( "../middlewares/authorize" );
-const checkExistingModel = require( "../middlewares/checkExistingModel" );
-const assignToken = require("../middlewares/assignToken")
-const checkLoginPassword = require("../middlewares/checkLoginPassword")
-const hashPassword = require("../middlewares/hashPassword")
+const validateToken = require('../middlewares/validateToken');
+const authorize = require('../middlewares/authorize');
+const checkExistingModel = require('../middlewares/checkExistingModel');
+const assignToken = require('../middlewares/assignToken');
+const checkLoginPassword = require('../middlewares/checkLoginPassword');
+const hashPassword = require('../middlewares/hashPassword');
 
 // add other middlewares that are used
 
-const express = require( "express" );
+const express = require('express');
 
-const router = express.Router( );
+const router = express.Router();
 
 // Add routes below
 // Example: router.post/get/put/ ..../delete ( path ), middlewares ( if any ), controllerFunction );
@@ -39,7 +39,7 @@ const router = express.Router( );
 *           }
 *      }
 */
-router.post( "/users/registration",checkExistingModel( "username", "User", "user" ), hashPassword, usersController.register );
+router.post('/users/registration', checkExistingModel('username', 'User', 'user'), hashPassword, usersController.register);
 
 /**
 *    @apiGroup User
@@ -55,7 +55,7 @@ router.post( "/users/registration",checkExistingModel( "username", "User", "user
 *      }
 */
 
-router.post( "/users/login", checkExistingModel( "username", "User", "user" ),checkLoginPassword,assignToken, usersController.login );
+router.post('/users/login', checkExistingModel('username', 'User', 'user'), checkLoginPassword, assignToken, usersController.login);
 
 /**
 *    @apiGroup User
@@ -66,7 +66,7 @@ router.post( "/users/login", checkExistingModel( "username", "User", "user" ),ch
 *    @apiParam {Number} age  Mandatory age. Minimum 18.
 *    @apiParam {String} sex  Mandatory sex.
 */
-router.put( "/users/edit", authorize, validateToken, usersController.edit );
+router.put('/users/edit', authorize, validateToken, usersController.edit);
 
 /**
 *    @apiGroup User
@@ -77,12 +77,12 @@ router.put( "/users/edit", authorize, validateToken, usersController.edit );
 *           id:123456789
 *       }
 */
-router.delete( "/users/delete", authorize, validateToken, usersController.delete );
+router.delete('/users/delete', authorize, validateToken, usersController.delete);
 
-router.get( "/test", ( req, res ) => {
-    res.json( { success: "THIS IS JUST A TEST" } );
-} );
+router.get('/test', (req, res) => {
+  res.json({ success: 'THIS IS JUST A TEST' });
+});
 
-module.exports = ( app ) => {
-    app.use( "/", router );
+module.exports = (app) => {
+  app.use('/', router);
 };

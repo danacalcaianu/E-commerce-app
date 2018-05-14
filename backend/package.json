@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon --watch app app/index.js",
     "doc": "apidoc -i app/ -o doc",
-    "lint": "eslint app",
+    "lint": "eslint",
     "ci": "npm run lint"
   },
   "repository": {
@@ -22,7 +22,9 @@
   "license": "ISC",
   "homepage": "https://github.com/FortechRomania/node-starter#readme",
   "dependencies": {
+    "bcrypt": "^1.0.3",
     "body-parser": "^1.15.2",
+    "co": "^4.6.0",
     "cors": "^2.8.4",
     "express": "^4.14.0",
     "express-jwt": "^5.1.0",
@@ -30,15 +32,14 @@
     "mongodb": "^2.2.10",
     "mongoose": "^4.6.1",
     "save": "^2.3.0",
+    "uid": "0.0.2",
     "winston": "^2.4.0"
   },
   "devDependencies": {
     "babel-eslint": "^8.0.2",
-    "bcrypt": "^1.0.3",
-    "eslint": "^4.11.0",
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb-base": "^12.1.0",
     "eslint-config-fortech": "^2.0.1",
-    "eslint-plugin-import": "^2.8.0",
-    "uid": "0.0.2",
-    "eslint-config-airbnb-base": "^12.0.2"
+    "eslint-plugin-import": "^2.11.0"
   }
 }
