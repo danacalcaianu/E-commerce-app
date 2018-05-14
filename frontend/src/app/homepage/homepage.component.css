@@ -1,14 +1,14 @@
-.wrapper{
+.wrapper {
     background-color: #f4f4f4;
-    width:100%;
+    width: 100%;
     padding: 50px 0;
     display: flex;
 }
 
-.wrapper p{
+.wrapper p {
     text-align: center;
     margin: 20px 0;
-    color:rgb(100, 100, 100);
+    color: rgb(100, 100, 100);
     font-family: 'Raleway';
     font-weight: 100;
 }
@@ -18,53 +18,55 @@
     font-size: 1.2em;
 }
 
-.left{
-    width:70%;
+.left {
+    width: 70%;
     padding: 20px 30px;
 }
 
-.right{
-    width:30%;
+.right {
+    width: 30%;
 }
 
-.container{
-    margin:40px 10px;
-    width:80%;
+.container {
+    margin: 40px 10px;
+    width: 80%;
     height: 200px;
-    border:1px solid rgb(195, 195, 195);
+    border: 1px solid rgb(195, 195, 195);
     padding: 10px;
 }
 
-.container p:first-of-type{
+.container p:first-of-type {
     border-bottom: 1px solid rgb(195, 195, 195);
     line-height: 0.1em;
 }
 
-.container p span{
+.container p span {
     background-color: #f4f4f4;
     padding: 0 10px;
 
 }
-.utils-banner{
+
+.utils-banner {
     display: flex;
     background-color: #e3e3e3;
 }
-.utils-banner .item{
-    flex:1;
+
+.utils-banner .item {
+    flex: 1;
     text-align: center;
     height: 100px;
-    padding:10px 20px;
+    padding: 10px 20px;
 
 }
 
-.item img{
-    margin-top:10px;
+.item img {
+    margin-top: 10px;
     width: 35px;
     height: 35px;
 }
 
 .item p {
-    color:grey;
+    color: grey;
     padding: 0 20px;
     font-size: 0.9em;
     font-weight: 100;

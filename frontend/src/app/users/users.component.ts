@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { UserService } from '../services/user.service'
+import { UserService } from '../services/user.service';
 import { FormGroup, FormControl } from '@angular/forms';
 
 @Component({
@@ -8,7 +8,7 @@ import { FormGroup, FormControl } from '@angular/forms';
       styleUrls: ['./users.component.css']
 })
 export class UsersComponent implements OnInit {
-    registerVisibility:any;
+    registerVisibility: any;
 
     loginForm = new FormGroup ({
         username: new FormControl(),
@@ -20,24 +20,24 @@ export class UsersComponent implements OnInit {
         username: new FormControl(),
         password: new FormControl()
 
-    })
+    });
 
     constructor(private userService: UserService) { }
 
     ngOnInit() {}
-    
+
     registerUser() {
-        this.userService.register(this.registerForm.value)
-        this.registerForm.reset()
+        this.userService.register(this.registerForm.value);
+        this.registerForm.reset();
         this.toggleRegister();
     }
 
-    loginUser() { 
-        this.userService.login(this.loginForm.value)
+    loginUser() {
+        this.userService.login(this.loginForm.value);
     }
 
-    toggleRegister(){
-        this.registerVisibility= !this.registerVisibility;
+    toggleRegister() {
+        this.registerVisibility = !this.registerVisibility;
         this.registerForm.reset();
         this.loginForm.reset();
     }

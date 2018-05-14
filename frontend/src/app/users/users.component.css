@@ -1,44 +1,43 @@
 .container {
-    margin:0 auto;
-    width:50%;
+    margin: 0 auto;
+    width: 50%;
     display: flex;
     align-items: center;
     flex-direction: column;
     border: 1px solid rgb(185, 185, 185);
-    margin-top:50px;
-    margin-bottom:50px;
+    margin-top: 50px;
+    margin-bottom: 50px;
     padding: 20px;
     border-radius: 3%;
     background-color: #58255c09;
 }
 
-form{
-    width:100%;
+form {
+    width: 100%;
     display: flex;
     align-items: center;
     flex-direction: column;
 
 }
 
-label{
+label {
     display: block;
 }
 
-input{
-    width:350px;
-    margin-bottom:10px;
+input {
+    width: 350px;
+    margin-bottom: 10px;
     height: 2em;
-    /* border-radius: 0%; */
 }
 
-.link{
-    margin-top:20px;
+.link {
+    margin-top: 20px;
     font-style: italic;
     cursor: pointer;
 }
 
-.title{
+.title {
     font-size: 1.7em;
     font-weight: bold;
-    padding-bottom:20px;
+    padding-bottom: 20px;
 }

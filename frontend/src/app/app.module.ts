@@ -1,7 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
-
 import { AppComponent } from './app.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { MenuBarComponent } from './menu-bar/menu-bar.component';
@@ -12,9 +10,9 @@ import { SearchBarComponent } from './search-bar/search-bar.component';
 import { MinicartComponent } from './minicart/minicart.component';
 import { ProductsList } from './products-list/products-list.component';
 import { RouterModule, Routes } from '@angular/router';
-import {Header } from './header/header.component';
+import { Header } from './header/header.component';
 import { ContactPageComponent } from './contact-page/contact-page.component';
-import { UserService } from "./services/user.service";
+import { UserService } from './services/user.service';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ToastrModule } from 'ngx-toastr';
@@ -22,9 +20,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 const appRoutes: Routes = [
   { path: '', component: HomepageComponent },
-  { path:'products', component:ProductsList },
-  { path:'contact', component:ContactPageComponent },
-  { path:'login', component:UsersComponent },
+  { path: 'products', component: ProductsList },
+  { path: 'contact', component: ContactPageComponent },
+  { path: 'login', component: UsersComponent },
 
 ];
 

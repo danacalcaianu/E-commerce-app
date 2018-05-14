@@ -1,12 +1,12 @@
-.contact-info{
-    border:1px solid rgb(222, 222, 222);
-    width:20%;
+.contact-info {
+    border: 1px solid rgb(222, 222, 222);
+    width: 20%;
     padding: 15px;
     text-align: center;
     background-color: white;
-    margin:20px auto;
+    margin: 20px auto;
 }
 
-.contact-info p{
+.contact-info p {
     padding: 5px;
 }
