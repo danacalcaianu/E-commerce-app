@@ -8,7 +8,16 @@ import { MenuBarComponent } from './menu-bar/menu-bar.component';
 import { SliderComponent } from './slider/slider.component';
 import { FooterComponent } from './footer/footer.component';
 import { SearchBarComponent } from './search-bar/search-bar.component';
+import { MinicartComponent } from './minicart/minicart.component';
+import { ProductsList } from './products-list/products-list.component';
+import { RouterModule, Routes } from '@angular/router';
+import {Header } from './header/header.component';
 
+const appRoutes: Routes = [
+  { path: '', component: HomepageComponent },
+  { path:'products', component:ProductsList },
+
+];
 
 @NgModule({
   declarations: [
@@ -17,10 +26,17 @@ import { SearchBarComponent } from './search-bar/search-bar.component';
     MenuBarComponent,
     SliderComponent,
     FooterComponent,
-    SearchBarComponent
+    SearchBarComponent,
+    MinicartComponent,
+    ProductsList,
+    Header
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    RouterModule.forRoot(
+      appRoutes,
+      { enableTracing: true } // <-- debugging purposes only
+    )
   ],
   providers: [],
   bootstrap: [AppComponent]

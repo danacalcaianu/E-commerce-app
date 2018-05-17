@@ -1,12 +1,19 @@
 <div class="menu">
   <ul>
-    <li>Products</li>
+    <a routerLink="/" routerLinkActive="active"><li>Home</li></a>
+    <a routerLink="/products" routerLinkActive="active"><li>Products</li></a>
     <li>Contact</li>
-    <li>FAQ</li>
   </ul>
   <app-search-bar></app-search-bar>
   <ul>
-    <li><img src="../../../assets/cart.png"></li>
+    <li (mouseenter)="toggleMiniCart()" (mouseleave)="toggleMiniCart()">
+      <img src="../../../assets/cart.png">
+      <div class="tooltip-triangle"></div>
+      <div class="tooltip-box"><span>2.5$</span></div>
+      <div *ngIf="visible">
+          <app-minicart class="modal"></app-minicart>
+        </div>
+    </li>
     <li>Login</li>
   </ul>
 </div>

@@ -8,8 +8,13 @@ import { Component, OnInit } from '@angular/core';
 export class MenuBarComponent implements OnInit {
 
   constructor() { }
-
+  selected;
+  visible= false;
   ngOnInit() {
+  }
+
+  toggleMiniCart(){
+    this.visible= !this.visible;
   }
 
 }
