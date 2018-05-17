@@ -27,9 +27,10 @@ export class UsersComponent implements OnInit {
     ngOnInit() {}
 
     registerUser() {
-        this.userService.register(this.registerForm.value);
-        this.registerForm.reset();
-        this.toggleRegister();
+        if (this.userService.register(this.registerForm.value)) {
+            this.toggleRegister();
+            this.registerForm.reset();
+        }
     }
 
     loginUser() {

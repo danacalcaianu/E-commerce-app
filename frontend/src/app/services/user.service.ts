@@ -7,15 +7,15 @@ import { Router } from '@angular/router';
 @Injectable()
 export class UserService {
     private _currentUser: BehaviorSubject<any> = new BehaviorSubject({});
-    
-    constructor(private http: HttpClient, 
-        private toastr:ToastrService,
+
+    constructor(private http: HttpClient,
+        private toastr: ToastrService,
         private router: Router) {
         this.loadInitialData();
     }
 
     loadInitialData() {
-        let user = localStorage.getItem("currentUser")
+        const user = localStorage.getItem('currentUser');
         if (user) {
             this._currentUser.next(JSON.parse(user).username);
         }
@@ -26,11 +26,13 @@ export class UserService {
         this.http.post('http://localhost:3030/users/registration', user)
             .subscribe(
                 res => {
-                if (res['success'] == true) {
-                    this.toastr.success('User registered successfully!')
+                if (res['success'] === true) {
+                    this.toastr.success('User registered successfully!');
+                    return true;
                 }},
                 error => {
-                    this.toastr.error(JSON.stringify(error.statusText))
+                    this.toastr.error(JSON.stringify(error.statusText));
+                    return false;
                 },
             );
     }
@@ -39,17 +41,17 @@ export class UserService {
         this.http.post('http://localhost:3030/users/login', user)
             .subscribe(
                 res => {
-                if (res['success'] == true) {
+                if (res['success'] === true) {
                     localStorage.setItem('currentUser', JSON.stringify(res['user']));
-                    this._currentUser.next(res['user'].username)
-                    this.toastr.success('Logged in!')
+                    this._currentUser.next(res['user'].username);
+                    this.toastr.success('Logged in!');
                 }},
                 error => {
-                    this.toastr.error(JSON.stringify(error.statusText))
+                    this.toastr.error(JSON.stringify(error.statusText));
                 },
                 () => {
                     this.router.navigate(['/products']);
-                })
+                });
     }
 
     getCurrentUser() {
@@ -58,7 +60,7 @@ export class UserService {
 
     logout() {
         localStorage.removeItem('currentUser');
-        this._currentUser.next(undefined)
+        this._currentUser.next(undefined);
         this.toastr.success('Logged out!');
     }
 }

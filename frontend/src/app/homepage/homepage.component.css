@@ -23,6 +23,11 @@
     padding: 20px 30px;
 }
 
+.left img {
+    margin: 0 auto;
+    display: block; 
+}
+
 .right {
     width: 30%;
 }
