@@ -1,0 +1,115 @@
+html{
+    height: 100%;
+    width: 100%;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+}
+*{
+    margin:0;
+}
+
+.header{
+    background: url("../../assets/cover5.jpg") no-repeat top center fixed;
+    background-size: cover;
+    height: 400px;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    /* color: white;
+    text-align: center;
+    font-size: 50px; */
+}
+.header p{
+    color: white;
+    text-align: center;
+    font-size: 50px;
+}
+
+.bottom{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+.wrapper{
+    width:80%;
+    margin: 0 auto;
+}
+
+.body{
+    background-color: #f4f4f4;
+    height: 1000px;
+    width:100%;
+    padding-top: 50px;
+    display: flex;
+}
+
+.body p{
+    text-align: center;
+    margin: 20px 0;
+    /* font-size: 1.2em; */
+    color:rgb(100, 100, 100);
+    font-family: 'Raleway';
+    font-weight: 100;
+}
+
+.body p:first-of-type {
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+.left{
+    width:70%;
+    padding: 20px 30px;
+}
+
+.right{
+    width:30%;
+}
+
+.container{
+    margin:40px 10px;
+    width:80%;
+    height: 200px;
+    border:1px solid rgb(195, 195, 195);
+    padding: 10px;
+}
+
+.container p:first-of-type{
+    border-bottom: 1px solid rgb(195, 195, 195);
+    line-height: 0.1em;
+}
+
+.container p span{
+    background-color: #f4f4f4;
+    padding: 0 10px;
+
+}
+.utils-banner{
+    display: flex;
+    background-color: #e3e3e3;
+}
+.utils-banner .item{
+    flex:1;
+    text-align: center;
+    height: 100px;
+    padding:10px 20px;
+
+}
+
+.item img{
+    margin-top:10px;
+    width: 35px;
+    height: 35px;
+}
+
+.item p {
+    color:grey;
+    padding: 0 20px;
+    font-size: 0.9em;
+    font-weight: 100;
+}
