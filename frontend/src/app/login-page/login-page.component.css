@@ -1,0 +1,37 @@
+.wrapper {
+    display: block;
+    margin: 20px;
+    border: 1px solid rgb(212, 212, 212);
+    border-radius: 10%;
+    padding: 10px;
+    width: 30%;
+}
+
+.field {
+    padding: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    width: 350px;
+    margin: 0 auto;
+}
+
+.field input {
+    width: 250px;
+    height: 20px;
+}
+
+button {
+    background-color: #047995;
+    height: 60%;
+    color: white;
+    font-size: 0.9em;
+    width: 100px;
+    font-weight: 100;
+    padding: 5px 0;
+    margin: 10px auto;
+}
+
+button:hover {
+    background-color: #58255c;
+    cursor: pointer;
+}

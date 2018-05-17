@@ -1,7 +1,7 @@
 .menu {
     background-color: rgba(255, 255, 255, 0.689);
     height: 50px;
-    width:100%;
+    width: 100%;
     display: flex;
 }
 
@@ -12,7 +12,7 @@
     margin: 0;
 }
 
-.menu ul:nth-of-type(2){
+.menu ul:nth-of-type(2) {
     justify-content: flex-end;
 }
 
@@ -20,59 +20,71 @@
     list-style-type: none;
     font-size: 1.2em;
     padding: 14px 30px;
-    color:rgba(0, 0, 0, 0.696);
+    color: rgba(0, 0, 0, 0.696);
     display: flex;
 }
 
-
-.menu li:hover{
+.menu li:hover {
     background-color: rgba(255, 255, 255, 0.798);
     cursor: pointer;
 }
 
-ul:nth-of-type(2) li{
+ul:nth-of-type(2) li {
     border-left: 1px solid rgba(255, 255, 255, 0.442);
 }
 
-ul:first-of-type li{
+ul:first-of-type li {
     border-right: 1px solid rgba(255, 255, 255, 0.442);
 }
 
-li img{
-    /* margin: 10px; */
+li img {
     width: 30px;
     height: 30px;
 }
 
-.modal{
+.modal {
     position: absolute;
-    top:100%;
-    right:0;
+    top: 100%;
+    right: 30px;
 }
 
-.menu{
+.menu {
     position: relative;
 }
 
-.tooltip-triangle{
+.tooltip-triangle {
     width: 1px;
     height: 1px;
-    border:6px solid transparent;
+    border: 6px solid transparent;
     border-right-color: #ac0b0b;
     display: flex;
     align-self: center;
 }
 
 
-.tooltip-box{
+.tooltip-box {
     background: linear-gradient(#8a0808,#990808, #ac0b0b, #990808,#8a0808);
-    padding:0 5px;
+    padding: 0 5px;
     border-radius: 5px;
 }
 
-.tooltip-box span{
+.tooltip-box span {
     font-size: 0.65em;
-    color:white;
+    color: white;
     display: block;
-    margin-top:4px;
+    margin-top: 4px;
+}
+
+.logout {
+    position: absolute;
+    top: 50px;
+    right: 0;
+    padding: 30px 20px;
+    background-color: rgba(255, 255, 255, 0.798);
+    border: 1px solid rgb(202, 202, 202);
+    box-shadow: 2px 3px 3px 2px #ababab41;
+}
+
+.user {
+    margin-left: 7px;
 }

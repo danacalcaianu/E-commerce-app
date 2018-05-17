@@ -1,43 +1,43 @@
-.wrapper{
+.wrapper {
     width: 250px;
     background-color: rgba(255, 255, 255, 0.798);
-    border:1px solid rgb(202, 202, 202);
+    border: 1px solid rgb(202, 202, 202);
     box-shadow: 2px 3px 3px 2px #ababab41;
     text-align: center;
     font-size: 0.9em;
 }
 
-.wrapper > div:first-of-type{
-    border:1px solid rgb(225, 225, 225);
+.wrapper > div:first-of-type {
+    border: 1px solid rgb(225, 225, 225);
     font-size: 1.1em;
     padding: 10px;
 }
 
-.button{
+.button {
     margin: 10px auto;
-    width:50%;
+    width: 50%;
     height: 40px;
     background-color: #047995;
-    color:white;
+    color: white;
     text-align: center;
     line-height: 40px;
     cursor: pointer;
 }
 
-.button:hover{
+.button:hover {
     background-color: #58255c;
 }
 
-.basket-info{
+.basket-info {
     display: flex;
-    padding:20px;
+    padding: 20px;
     line-height: 35px;
     border-bottom: 1px solid rgb(225, 225, 225);
     text-align: left;
     justify-content: space-around;
 }
 
-.basket-info img{
-    width:80px;
+.basket-info img {
+    width: 80px;
     height: 80px;
 }
