@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../services/user.service';
 import { FormGroup, FormControl } from '@angular/forms';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
     selector: 'app-users',
@@ -22,15 +23,22 @@ export class UsersComponent implements OnInit {
 
     });
 
-    constructor(private userService: UserService) { }
+    constructor(private userService: UserService, private toastr: ToastrService) { }
 
     ngOnInit() {}
 
     registerUser() {
-        if (this.userService.register(this.registerForm.value)) {
-            this.toggleRegister();
-            this.registerForm.reset();
-        }
+        this.userService.register(this.registerForm.value).subscribe(
+            res => {
+            if (res['success'] === true) {
+                this.toastr.success('User registered successfully!');
+                this.toggleRegister();
+                this.registerForm.reset();
+            }},
+            error => {
+                this.toastr.error(JSON.stringify(error.statusText));
+            },
+        );
     }
 
     loginUser() {

@@ -23,18 +23,7 @@ export class UserService {
 
 
     register(user) {
-        this.http.post('http://localhost:3030/users/registration', user)
-            .subscribe(
-                res => {
-                if (res['success'] === true) {
-                    this.toastr.success('User registered successfully!');
-                    return true;
-                }},
-                error => {
-                    this.toastr.error(JSON.stringify(error.statusText));
-                    return false;
-                },
-            );
+        return this.http.post('http://localhost:3030/users/registration', user);
     }
 
     login(user) {
