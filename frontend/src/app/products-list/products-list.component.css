@@ -1,0 +1,44 @@
+.product {
+    height: auto;
+    width: 25%;
+    background-color: rgb(255, 255, 255);
+    border: 1px solid rgb(219, 219, 219);
+    margin: 30px 0;
+    padding-top: 30px;
+    cursor: pointer;
+}
+
+.wrapper {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    width: 100%;
+    margin-top: 40px;
+}
+
+.product-image {
+    max-height: 200px;
+    display: block;
+    margin: 0 auto;
+}
+
+.product-image:hover {
+    transform: rotate(10deg);
+    transition-duration: 300ms;
+}
+
+.product-details {
+    margin-top: 15px;
+    display: block;
+    text-align: center;
+    padding: 0px 30px;
+}
+
+button {
+    display: block;
+    margin: 30px auto;
+}
+
+.description {
+    height: 70px;
+}

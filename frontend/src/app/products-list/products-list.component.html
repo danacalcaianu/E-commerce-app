@@ -1,1 +1,9 @@
-<p>products page works</p>
+<div class="wrapper">
+    <div class="product" *ngFor="let cupcake of cupcakes">
+        <img [src]="cupcake.image" class="product-image">
+        <span class="product-details">{{cupcake.name}}</span>
+        <span class="product-details description">{{cupcake.description}}</span>
+        <span class="product-details">{{cupcake.price}}$</span>
+        <button>Add to cart</button>
+    </div>
+</div>
