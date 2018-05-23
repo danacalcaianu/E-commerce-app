@@ -28,7 +28,7 @@
 }
 
 .product-details {
-    margin-top: 15px;
+    margin-top: 10px;
     display: block;
     text-align: center;
     padding: 0px 30px;
@@ -41,4 +41,13 @@ button {
 
 .description {
     height: 70px;
+}
+
+.title {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.price {
+    font-size: 1.5em;
 }
