@@ -1,6 +1,6 @@
 <div class="wrapper">
     <div class="product" *ngFor="let cupcake of cupcakes">
-        <img [src]="cupcake.image || 'https://cdn0.iconfinder.com/data/icons/sweets-glyph-black/2048/Cherry_cupcake-512.png'" class="product-image">
+        <img [src]="cupcake.image || defaultImage" class="product-image">
         <span class="product-details title">{{cupcake.name}}</span>
         <span class="product-details description">{{cupcake.description}}</span>
         <span class="product-details price">{{cupcake.price}}$</span>
