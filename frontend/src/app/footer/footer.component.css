@@ -31,7 +31,6 @@
 }
 
 .social-media img:hover {
-    padding-right: 10px;
-    height: 50px;
-    transition-duration: 0.3s;
+    transform: rotate(360deg);
+    transition-duration: 500ms;
 }
