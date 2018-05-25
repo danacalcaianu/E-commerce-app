@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { ProductsService } from '../services/products.service'
+import { UserService } from '../services/user.service'
 
 @Component({
   selector: 'app-minicart',
@@ -7,9 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MinicartComponent implements OnInit {
 
-  constructor() { }
+  @Input() cart;
+  defaultImage: any;
+
+  constructor(private productsService: ProductsService, private userService: UserService) { }
 
   ngOnInit() {
+    this.defaultImage = 'https://cdn0.iconfinder.com/data/icons/sweets-glyph-black/2048/Cherry_cupcake-512.png';
+    // this.userService.getUserCart().subscribe(item=>{console.log('here',this.cart=item));
   }
-
+  ngOnChanges(changes){
+    console.log('le cart', this.cart)
+  }
 }

@@ -4,6 +4,6 @@
         <span class="product-details title">{{cupcake.name}}</span>
         <span class="product-details description">{{cupcake.description}}</span>
         <span class="product-details price">{{cupcake.price}}$</span>
-        <button>Add to cart</button>
+        <button (click)="addToCart(cupcake.id)">Add to cart</button>
     </div>
 </div>

@@ -11,6 +11,7 @@ const userSchema = new Schema({
   name: { type: String, required: true },
   age: { type: Number, required: false, min: 18 },
   sex: { type: String, required: false, enum: ['male', 'female'] },
+  cart: { type: [String] },
 }, {
   timestamps: true,
 });
@@ -24,6 +25,10 @@ userSchema.methods.setPass = function (password) {
 
 userSchema.methods.setId = function () {
   this.id = uid(10);
+};
+
+userSchema.methods.addProduct = function (product) {
+  this.cart.push(product);
 };
 
 module.exports = mongoose.model('User', userSchema);

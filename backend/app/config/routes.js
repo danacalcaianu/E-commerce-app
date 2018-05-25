@@ -79,9 +79,14 @@ router.put('/users/edit', authorize, validateToken, usersController.edit);
 */
 router.delete('/users/delete', authorize, validateToken, usersController.delete);
 
-router.get('/test', (req, res) => {
-  res.json({ success: 'THIS IS JUST A TEST' });
-});
+/**
+*    @apiGroup User
+*    @api {put} /users/updateCart 
+*    @apiDescription Add items to the user's cart
+*/
+router.put('/users/updateCart', checkExistingModel('id', 'User', 'user'), usersController.updateCart);
+
+router.get('/user/:id', checkExistingModel('id', 'User', 'user'), usersController.getUser);
 
 module.exports = (app) => {
   app.use('/', router);

@@ -50,3 +50,15 @@ exports.delete = (req, res) => {
   user.remove();
   res.success();
 };
+
+exports.updateCart = (req, res) => {
+  const { user } = req;
+  const { product } = req.body;
+  user.addProduct(product)
+  return saveChangesToModel(res, user);
+}
+
+exports.getUser = (req, res) => {
+  const { user } = req;
+  return res.success(user);
+}

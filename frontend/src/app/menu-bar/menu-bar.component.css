@@ -45,7 +45,7 @@ li img {
 .modal {
     position: absolute;
     top: 100%;
-    right: 30px;
+    right: 0px;
 }
 
 .menu {

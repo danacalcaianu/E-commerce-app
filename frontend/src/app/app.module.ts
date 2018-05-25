@@ -17,6 +17,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
+import { ProductsService } from './services/products.service';
 
 const appRoutes: Routes = [
   { path: '', component: HomepageComponent },
@@ -47,7 +48,7 @@ const appRoutes: Routes = [
     HttpClientModule,
     ReactiveFormsModule
   ],
-  providers: [UserService],
+  providers: [UserService, ProductsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

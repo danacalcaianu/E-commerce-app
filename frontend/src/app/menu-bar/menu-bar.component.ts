@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../services/user.service';
+import { ProductsService } from '../services/products.service';
 
 @Component({
   selector: 'app-menu-bar',
@@ -8,21 +9,30 @@ import { UserService } from '../services/user.service';
 })
 export class MenuBarComponent implements OnInit {
 
-  constructor(private userService:  UserService) { }
+  constructor(private userService:  UserService, private productsService: ProductsService) { }
   selected;
   user;
-  visible= false;
+  visible = false;
   logoutDiv = false;
+  productsTotal;
+  cart;
+
   ngOnInit() {
-    this.userService.getCurrentUser().subscribe(res => {
-      if (typeof res  === 'string') {
-        this.user = res;
-      }
+    this.userService.getCurrentUserId().subscribe(id => {
+        this.userService.getCurrentUser(id).subscribe(user => {
+          this.user = user['payload'];
+          this.userService.getUserCart().subscribe(itemz => {
+            this.productsTotal = itemz.reduce((total, item ) =>  parseInt(total, 10) + parseInt(item.price, 10), 0);
+            return this.cart = itemz;
+          });
+        });
     });
   }
 
   ngOnChange() {
-    this.userService.getCurrentUser().subscribe(res => this.user = res);
+    this.userService.getCurrentUserId().subscribe(id => {
+        this.userService.getCurrentUser(id).subscribe(user => this.user = user['payload']);
+    });
   }
 
   toggleMiniCart() {

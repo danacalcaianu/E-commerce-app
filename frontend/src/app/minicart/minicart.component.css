@@ -1,10 +1,12 @@
 .wrapper {
-    width: 250px;
-    background-color: rgba(255, 255, 255, 0.798);
+    width: 290px;
+    background-color: rgba(255, 255, 255, 0.977);
     border: 1px solid rgb(202, 202, 202);
     box-shadow: 2px 3px 3px 2px #ababab41;
     text-align: center;
     font-size: 0.9em;
+    height: 400px;
+    overflow: scroll;
 }
 
 .wrapper > div:first-of-type {

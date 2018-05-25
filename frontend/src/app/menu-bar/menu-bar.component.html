@@ -12,14 +12,14 @@
   </ul>
   <app-search-bar></app-search-bar>
   <ul>
-    <li (mouseenter)="toggleMiniCart()" (mouseleave)="toggleMiniCart()">
+    <li (mouseenter)="toggleMiniCart()" (mouseleave)="toggleMiniCart()"  *ngIf="user">
       <img src="../../../assets/cart.png">
       <div class="tooltip-triangle"></div>
       <div class="tooltip-box">
-        <span>2.5$</span>
+        <span>{{productsTotal}} $</span>
       </div>
       <div *ngIf="visible">
-        <app-minicart class="modal"></app-minicart>
+        <app-minicart class="modal" [cart]="cart"></app-minicart>
       </div>
     </li>
     <a routerLink="/login" routerLinkActive="active" *ngIf="!user">
@@ -27,7 +27,7 @@
     </a>
     <a *ngIf="user">
       <li (mouseenter)="toggleLogout()" (mouseleave)="toggleLogout()">
-        <img src="../assets/user.png"> <p class="user">{{user}}</p>
+        <img src="../assets/user.png"> <p class="user">{{user.username}}</p>
         <div class="logout" *ngIf="logoutDiv">
           <button (click)="logout()">Logout</button>
         </div>

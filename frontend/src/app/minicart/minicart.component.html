@@ -1,10 +1,11 @@
 <div class="wrapper">
   <div>Your basket</div>
-  <div class="basket-info">
-    <img src="../../../assets/slider-photo5.jpg">
+  {{cupcakes}}
+  <div class="basket-info" *ngFor="let cupcake of this.cart">
+    <img src="{{cupcake.image || defaultImage}}">
     <div>
-      <p>Test cupcake</p>
-      <p>1.5 €</p>
+      <p>{{cupcake.name}}</p>
+      <p>{{cupcake.price}} €</p>
     </div>
   </div>
   <div class="button">Checkout</div>
