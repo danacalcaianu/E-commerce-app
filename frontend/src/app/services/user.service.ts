@@ -3,7 +3,6 @@ import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject } from 'rxjs/Rx';
 import { ToastrService } from 'ngx-toastr';
 import { Router } from '@angular/router';
-import { ProductsService } from './products.service'
 import { products } from '../../../cupcakes-data.js';
 
 @Injectable()
@@ -14,8 +13,7 @@ export class UserService {
 
     constructor(private http: HttpClient,
         private toastr: ToastrService,
-        private router: Router,
-        private productsService: ProductsService) {
+        private router: Router) {
         this.loadInitialData();
     }
 
@@ -58,11 +56,6 @@ export class UserService {
         return this.http.get(`http://localhost:3030/user/${id}`);
     }
 
-    getUserCart() {
-       this._currentCart.next( this.getProducts( this._currentUser.getValue().cart));
-       return this._currentCart.asObservable();
-    }
-
     logout() {
         localStorage.removeItem('currentUser');
         this._currentUserId.next(undefined);
@@ -76,6 +69,11 @@ export class UserService {
                 this._currentCart.next(this.getProducts(result['payload'].cart));
                 this.toastr.success('Added to cart');
         });
+    }
+
+    getUserCart() {
+        this._currentCart.next( this.getProducts( this._currentUser.getValue().cart));
+        return this._currentCart.asObservable();
     }
 
     getProduct(id) {

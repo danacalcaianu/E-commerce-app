@@ -35,6 +35,14 @@ input {
     border: 1px solid rgb(197, 197, 197);
 }
 
+.uppercase {
+  text-transform: uppercase;
+}
+
+.titlecase{
+  text-transform: capitalize;
+}
+
 [disabled] {
     background-color: rgb(156, 156, 156);
 }

@@ -1,6 +1,4 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { ProductsService } from '../services/products.service';
-import { UserService } from '../services/user.service';
 
 @Component({
   selector: 'app-minicart',
@@ -12,7 +10,7 @@ export class MinicartComponent implements OnInit {
   @Input() cart;
   defaultImage: any;
 
-  constructor(private productsService: ProductsService, private userService: UserService) { }
+  constructor() { }
 
   ngOnInit() {
     this.defaultImage = 'https://cdn0.iconfinder.com/data/icons/sweets-glyph-black/2048/Cherry_cupcake-512.png';

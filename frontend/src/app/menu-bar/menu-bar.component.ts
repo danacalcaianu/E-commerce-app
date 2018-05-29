@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../services/user.service';
-import { ProductsService } from '../services/products.service';
 
 @Component({
   selector: 'app-menu-bar',
@@ -9,7 +8,7 @@ import { ProductsService } from '../services/products.service';
 })
 export class MenuBarComponent implements OnInit {
 
-  constructor(private userService:  UserService, private productsService: ProductsService) { }
+  constructor(private userService:  UserService) { }
   selected;
   user;
   visible = false;
