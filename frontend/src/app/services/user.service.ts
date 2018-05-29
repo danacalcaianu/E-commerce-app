@@ -38,7 +38,7 @@ export class UserService {
                 if (res['success'] === true) {
                     localStorage.setItem('currentUser', JSON.stringify(res['user']['id']));
                     this._currentUserId.next(res['user'].id);
-                    this._currentUser.next(res.user)
+                    this._currentUser.next(res['user']);
                     this.toastr.success('Logged in!');
                 }},
                 error => {
@@ -54,7 +54,7 @@ export class UserService {
     }
 
     getCurrentUser(id) {
-        this.http.get(`http://localhost:3030/user/${id}`).subscribe(user=>this._currentUser.next(user.payload));
+        this.http.get(`http://localhost:3030/user/${id}`).subscribe(user=>this._currentUser.next(user['payload']));
         return this.http.get(`http://localhost:3030/user/${id}`);
     }
 
@@ -73,9 +73,7 @@ export class UserService {
         const user = this._currentUserId.getValue();
         this.http.put('http://localhost:3030/users/updateCart', {'id': user, 'product': product})
             .subscribe(result => { 
-                console.log('before  ',this._currentCart.getValue())
-                this._currentCart.next(this.getProducts(result.payload.cart));
-                console.log('after: ', this._currentCart.getValue())
+                this._currentCart.next(this.getProducts(result['payload'].cart));
                 this.toastr.success('Added to cart');
         });
     }
